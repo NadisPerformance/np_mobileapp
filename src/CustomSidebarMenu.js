@@ -3,8 +3,8 @@ import {SafeAreaView,View,StyleSheet,Image,Text,Linking,} from 'react-native';
 import {DrawerContentScrollView,DrawerItemList,DrawerItem,} from '@react-navigation/drawer';
 const CustomSidebarMenu = (props) => {
   const BASE_PATH =
-    'https://cdn6.f-cdn.com/contestentries/1474076/24142075/';
-  const proileImage = '5c6d12fa00340_thumb900.jpg';
+    '../assets/';
+  const proileImage = 'logo.png';
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
