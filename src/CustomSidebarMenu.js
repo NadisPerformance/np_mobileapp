@@ -1,6 +1,7 @@
 import React from 'react';
 import { SafeAreaView, View, StyleSheet, Image, Text, Linking, } from 'react-native';
 import { DrawerContentScrollView, DrawerItemList, DrawerItem, } from '@react-navigation/drawer';
+import image from '../assets/logo.png';
 const CustomSidebarMenu = (props) => {
   const BASE_PATH =
     '../assets/';
@@ -10,7 +11,7 @@ const CustomSidebarMenu = (props) => {
     <SafeAreaView style={{ flex: 1 }}>
       {/*Top Large Image */}
       <Image
-        source={{ uri: BASE_PATH + profileImage }}
+        source={image}
         style={styles.sideMenuProfileIcon}
       />
       <DrawerContentScrollView {...props}>
@@ -21,7 +22,7 @@ const CustomSidebarMenu = (props) => {
         />
         <View style={styles.customItem}>
           <Image
-            source={{ uri: BASE_PATH + 'Logo.png' }}
+            source={image}
             style={styles.iconStyle}
           />
         </View>

@@ -1,7 +1,6 @@
 import React from 'react';
-import { ImageBackground, StyleSheet, Text, View } from 'react-native';
+import { ImageBackground, Linking, StyleSheet, Text, TouchableOpacity, View ,FlatList,ScrollView} from 'react-native';
 import image from '../assets/backg.jpg';
-import { ScrollView } from "react-native-gesture-handler";
 import SimpleCard from './SimpleCard';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
@@ -13,22 +12,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faObjectGroup, faEdit, faCreditCard} from '@fortawesome/free-solid-svg-icons';
 import Box from '@material-ui/core/Box';
 import { borders } from '@material-ui/system';
+import { Colors } from 'react-native/Libraries/NewAppScreen';
+import COLORS from '../assets/COLORS/colors';
+import Icon from 'react-native-vector-icons/MaterialIcons';
+import backgcard from '../assets/cardbackg.png';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: 'column',
-
-
   },
-  image: {
-    
-    
-    resizeMode: 'cover',
-    justifyContent: 'center',
-    width: '100%',
-    height: '100%',
-
+  images: {
+    flex:1,
   },
   text: {
     color: "white",
@@ -38,8 +32,25 @@ const styles = StyleSheet.create({
     textAlign: "center",
     backgroundColor: "#8B0000"
   },
-});
+  details: {
+    height:'30%',
+    bottom:0,
+    position:'absolute',
+    paddingHorizontal:40,
+  },
+  btn:{
+    height:30,
+    width:100,
+    backgroundColor:'#8B0000',
+    marginTop:390,
+    marginLeft:200,
+    borderRadius:8,
+    justifyContent:'center',
+    alignItems:'center',
 
+  },
+});
+ 
 const useStyles = makeStyles({
   root: {
     minWidth: 275,
@@ -61,89 +72,210 @@ const useStyles = makeStyles({
   },
 });
 export default function FirstPage() {
+  
   const classes = useStyles();
-  const bull = <span className={classes.bullet}>•</span>;
-
+  const onPress = () => Linking.canOpenURL('http://nadisperformance.com/').then(() => {
+    Linking.openURL('http://nadisperformance.com/');
+});
   return (
-
-    <View style={styles.container}>
-      <ScrollView contentContainerStyle={{ paddingBottom: 120 }}>
-      
-        <ImageBackground source={image} style={styles.image}>
-          
+    <ScrollView >
+        <ImageBackground source={image} style={styles.images}>
+          <View style={styles.details}>
+            <Text style={{color:COLORS.white, fontSize:22,fontWeight:'bold'}}> Entreprise</Text>
+            <Text style={{color:COLORS.white, fontSize:19,fontWeight:'bold',lineHeight:19,marginLeft:6}}> De services Informatiques</Text>
+            <Text style={{color:COLORS.white, fontSize:10,fontWeight:'bold',marginLeft:20}}>informatisez vos projets avec <Text style={{color:'#8b0000', fontSize:12,fontWeight:'bold'}}>PERFORMANCE</Text></Text>
+          </View>
+          <View style={styles.btn}>
+          <TouchableOpacity activeOpacity={0.8}
+          onPress={onPress}>
+            <Text style={{fontWeight:'bold', color:COLORS.white}}>visitez-nous</Text>
+            </TouchableOpacity>
+          </View>
         </ImageBackground>
-        <br />
-        <Text style={{ fontSize: 16, textAlign: 'center', color: 'grey' }}>
-            <Box m={2}>
-            <Card className={classes.root} variant="outlined" style={{ borderRadius: 20, border: 1 }} >
 
-            <CardContent>
-            
-              <Typography variant="h5" component="h2">
-              <faEdit />
-                ERP/CRM
-              </Typography>
-              <Typography className={classes.pos} color="textSecondary">
 
-              </Typography>
-              <Typography variant="body2" component="p">
-                Les ERP jouent un rôle important dans
-                la vie de vos entreprises. Pour vous aider
-                à gérer vos projets, de définir et implémenter
-                votre nouveau système de gestion de comptable,
-                de mettre en place votre système de facturation
-                et documents ou encore de gérer vos stocks ou vos achats, vous trouvez ainsi le module CRM pour booster vos relations clientèles.              <br />
-              </Typography>
-            </CardContent>
-          </Card>
-          </Box>
+
+
+
+        <View
+        style={{
+          backgroundColor: "#8B0000",
+          borderRadius: 40,
+          marginHorizontal: 10,
+          paddingVertical: 20,
+          marginTop: 20,
+        }}
+      >
+        <View
+          style={{
+            flexDirection: "row",
+            alignSelf: "flex-end",
+            alignItems: "center",
+            justifyContent: "space-between",
+          }}
+        >
+          <View
+            style={{
+              paddingLeft: 20,
+              paddingRight: 20,
+            }}
+          >
+            <Text
+              style={{
+                fontSize: 20,
+                fontWeight:'bold',
+                color: "#FFF",
+              }}
+            >
+              ERP/CRM
+            </Text>
+          </View>
+        </View>
+        <Text
+          style={{
+            fontSize: 17,
+            color: "#FFF",
+            marginVertical: 20,
+            paddingHorizontal: 30,
+          }}
+        >
+          Les ERP jouent un rôle important dans la vie de 
+          vos entreprises. Pour vous aider à gérer vos projets,
+           de définir et implémenter votre nouveau système de gestion
+            de comptable, de mettre en place votre système de facturation 
+            et documents ou encore de gérer vos stocks ou vos achats, 
+            vous trouvez ainsi 
+          le module CRM pour booster vos relations clientèles.
         </Text>
-          <Text style={{ fontSize: 16, textAlign: 'center', color: 'grey' }}>
-          <Box m={2} >
-            <Card className={classes.root} variant="outlined" style={{borderRadius:20, border:1}}>
+        <View
+          style={{
+            alignItems: "center",
+            flexDirection: "row",
+            justifyContent: "center",
+            marginVertical: 5,
+          }}
+        >
+        </View>
+      </View>
 
-            <CardContent>
-              <FontAwesomeIcon icon="coffee" />
 
-              <Typography variant="h5" component="h2">
+
+      <View
+        style={{
+          backgroundColor: "#8B0000",
+          borderRadius: 40,
+          marginHorizontal: 10,
+          paddingVertical: 20,
+          marginTop: 20,
+        }}
+      >
+        <View
+          style={{
+            flexDirection: "row",
+            alignSelf: "flex-end",
+            alignItems: "center",
+            justifyContent: "space-between",
+          }}
+        >
+          <View
+            style={{
+              paddingLeft: 20,
+              paddingRight: 20,
+            }}
+          >
+            <Text
+              style={{
+                fontSize: 18,
+                color: "#FFF",
+                fontWeight:'bold',
+              }}
+            >
               Application web & mobile
-              </Typography>
-              <Typography className={classes.pos} color="textSecondary">
-
-              </Typography>
-              <Typography variant="body2" component="p">
-               Nadis Performance vous accompagne dans vos choix stratégiques. Selon le contexte global de votre entreprise, nous vous conseillons afin de valoriser votre image et de créer un message clair adapté à votre cible.<br />
-              </Typography>
-            </CardContent>
-          </Card>
-          </Box>
-          </Text>
-                    <Text style={{ fontSize: 16, textAlign: 'center', color: 'grey' }}>
-
-            <Box m={2}>
-            <Card className={classes.root} variant="outlined" style={{ borderRadius: 20, border: 1 }}>
-
-            <CardContent>
-              <FontAwesomeIcon icon="coffee" />
-
-              <Typography variant="h5" component="h2">
-                Site web & community management
-                </Typography>
-              <Typography className={classes.pos} color="textSecondary">
-
-              </Typography>
-              <Typography variant="body2" component="p">
-                Nous sommes très sensibles aux tendances du web et au respect des règles ergonomiques lors de la création d’un web design. Nous développons des projets sur différents CMS personnalisés ou comme WordPress ou Prestashop ...
-              </Typography>
-            </CardContent>
-          </Card>
-          </Box>
-          </Text>
-        <Text style={{ fontSize: 16, textAlign: 'center', color: 'grey' }}>
-          http://nadisperformance.com
+            </Text>
+          </View>
+        </View>
+        <Text
+          style={{
+            fontSize: 17,
+            color: "#FFF",
+            marginVertical: 20,
+            paddingHorizontal: 30,
+          }}
+        >
+          Nadis Performance vous accompagne dans vos choix stratégiques.
+           Selon le contexte global de votre entreprise, nous vous conseillons afin de valoriser 
+          votre image et de créer un message clair adapté à votre cible.
         </Text>
-        </ScrollView>
-    </View>
+        <View
+          style={{
+            alignItems: "center",
+            flexDirection: "row",
+            justifyContent: "center",
+            marginVertical: 5,
+          }}
+        >
+         
 
+        </View>
+      </View>
+      <View
+        style={{
+          backgroundColor: "#8B0000",
+          borderRadius: 40,
+          marginHorizontal: 10,
+          paddingVertical: 20,
+          marginTop: 20,
+        }}
+      >
+        <View
+          style={{
+            flexDirection: "row",
+            alignSelf: "flex-end",
+            alignItems: "center",
+            justifyContent: "space-between",
+          }}
+        >
+          <View
+            style={{
+              paddingLeft: 20,
+              paddingRight: 20,
+            }}
+          >
+            <Text
+              style={{
+                fontSize: 20,
+                fontWeight:'bold',
+                color: "#FFF",
+              }}
+            >
+             Site web
+            </Text>
+          </View>
+        </View>
+        <Text
+          style={{
+            fontSize: 17,
+            color: "#FFF",
+            marginVertical: 20,
+            paddingHorizontal: 30,
+          }}
+        >
+          Nous sommes très sensibles aux tendances du web et 
+          au respect des règles ergonomiques lors de la création
+           d’un web design. Nous développons des projets sur différents CMS 
+          personnalisés ou comme WordPress ou Prestashop ...
+        </Text>
+        <View
+          style={{
+            alignItems: "center",
+            flexDirection: "row",
+            justifyContent: "center",
+            marginVertical: 5,
+          }}
+        >
+        </View>
+      </View>
+
+      </ScrollView>
   );
 }
