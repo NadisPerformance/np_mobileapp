@@ -10,6 +10,7 @@ import Services from './src/Services';
 import  Contact from './src/Contact'
 import Rejoindre from './src/Rejoindre';
 import CustomSidebarMenu from './src/CustomSidebarMenu';
+import Demande from './src/Demande';
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -136,9 +137,32 @@ function RejoindreScreenStack({ navigation }) {
     <Stack.Navigator initialRouteName="Rejoindre">
       <Stack.Screen
         name="Rejoindre"
-        component={Accueil}
+        component={Rejoindre}
         options={{
           title: 'Nous Rejoindre', //Set Header Title
+          headerLeft: () => (
+            <NavigationDrawerStructure navigationProps={navigation} />
+          ),
+          headerStyle: {
+            backgroundColor: '#8b0000', //Set Header color
+          },
+          headerTintColor: '#fff', //Set Header text color
+          headerTitleStyle: {
+            fontWeight: 'bold', //Set Header text style
+          },
+        }}
+      />
+    </Stack.Navigator>
+  );
+}
+function DemandeFunc({ navigation }) {
+  return (
+    <Stack.Navigator initialRouteName="Demande">
+      <Stack.Screen
+        name="Demande"
+        component={Demande}
+        options={{
+          title: 'DEMANDE DE DEVIS', //Set Header Title
           headerLeft: () => (
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
@@ -183,10 +207,11 @@ function App() {
           options={{ drawerLabel: 'Contact' }}
           component={ContactScreenStack}
         />
-         <Drawer.Screen
-          name="Rejoindre"
-          options={{ drawerLabel: 'Nous rejoindre' }}
-          component={RejoindreScreenStack}
+
+        <Drawer.Screen
+          name="Demande"
+          options={{ drawerLabel: 'Demande de devis' }}
+          component={DemandeFunc}
         />
       </Drawer.Navigator>
     </NavigationContainer>

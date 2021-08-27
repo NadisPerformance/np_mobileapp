@@ -8,29 +8,33 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faObjectGroup, faEdit, faCreditCard} from '@fortawesome/free-solid-svg-icons';
 import Box from '@material-ui/core/Box';
 import { borders } from '@material-ui/system';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 import COLORS from '../assets/COLORS/colors';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import backgcard from '../assets/cardbackg.png';
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
+import { faCreditCard, faEdit , faObjectGroup } from '@fortawesome/free-solid-svg-icons';
+
+
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor:"#D0D8EA40",
   },
   images: {
     flex:1,
+    height: 500,
   },
   text: {
-    color: "white",
+    color: "#FFF",
     fontSize: 32,
     lineHeight: 44,
     fontWeight: "bold",
     textAlign: "center",
-    backgroundColor: "#8B0000"
+    backgroundColor: "#8B0000",
   },
   details: {
     height:'30%',
@@ -42,12 +46,22 @@ const styles = StyleSheet.create({
     height:30,
     width:100,
     backgroundColor:'#8B0000',
-    marginTop:390,
+    marginTop:450,
     marginLeft:200,
     borderRadius:8,
     justifyContent:'center',
     alignItems:'center',
 
+  },
+  btnn: {
+    height: 40,
+    width: 150,
+    backgroundColor: '#8B0000',
+    marginTop: 450,
+    marginLeft: 180,
+    borderRadius: 8,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });
  
@@ -81,22 +95,18 @@ export default function FirstPage() {
     <ScrollView >
         <ImageBackground source={image} style={styles.images}>
           <View style={styles.details}>
-            <Text style={{color:COLORS.white, fontSize:22,fontWeight:'bold'}}> Entreprise</Text>
-            <Text style={{color:COLORS.white, fontSize:19,fontWeight:'bold',lineHeight:19,marginLeft:6}}> De services Informatiques</Text>
-            <Text style={{color:COLORS.white, fontSize:10,fontWeight:'bold',marginLeft:20}}>informatisez vos projets avec <Text style={{color:'#8b0000', fontSize:12,fontWeight:'bold'}}>PERFORMANCE</Text></Text>
+          <Text style={{ color: '#000', fontSize: 22, fontWeight: 'bold', marginBottom: 12}}> </Text>
+          <Text style={{ color: '#000', fontSize:18,fontWeight:'bold',lineHeight:19,marginLeft:6}}> Entreprise de services Informatiques</Text>
+            <Text style={{color:'#000', fontSize:14,fontWeight:'bold',marginLeft:20}}>informatisez vos projets avec <Text style={{color:'#8b0000', fontSize:12,fontWeight:'bold'}}>PERFORMANCE</Text></Text>
           </View>
           <View style={styles.btn}>
+          
           <TouchableOpacity activeOpacity={0.8}
           onPress={onPress}>
             <Text style={{fontWeight:'bold', color:COLORS.white}}>visitez-nous</Text>
             </TouchableOpacity>
           </View>
         </ImageBackground>
-
-
-
-
-
         <View
         style={{
           backgroundColor: "#8B0000",
@@ -116,10 +126,12 @@ export default function FirstPage() {
         >
           <View
             style={{
-              paddingLeft: 20,
-              paddingRight: 20,
+              paddingLeft: 0,
+              paddingRight: 270,
             }}
           >
+                        <FontAwesomeIcon icon={faEdit} size={32} style={{ color: "#FFF"}}/>
+
             <Text
               style={{
                 fontSize: 20,
@@ -127,10 +139,13 @@ export default function FirstPage() {
                 color: "#FFF",
               }}
             >
-              ERP/CRM
+              <Text></Text>
+              
+                ERP/CRM
             </Text>
           </View>
         </View>
+
         <Text
           style={{
             fontSize: 17,
@@ -139,6 +154,8 @@ export default function FirstPage() {
             paddingHorizontal: 30,
           }}
         >
+
+
           Les ERP jouent un rôle important dans la vie de 
           vos entreprises. Pour vous aider à gérer vos projets,
            de définir et implémenter votre nouveau système de gestion
@@ -179,15 +196,18 @@ export default function FirstPage() {
         >
           <View
             style={{
-              paddingLeft: 20,
-              paddingRight: 20,
+              paddingLeft: 0,
+              paddingRight: 133,
             }}
           >
+  <FontAwesomeIcon icon={faObjectGroup} size={32} style={{ color: "#FFF"}} />
+
             <Text
               style={{
-                fontSize: 18,
+                fontSize: 20,
                 color: "#FFF",
                 fontWeight:'bold',
+                
               }}
             >
               Application web & mobile
@@ -215,7 +235,6 @@ export default function FirstPage() {
           }}
         >
          
-
         </View>
       </View>
       <View
@@ -237,10 +256,12 @@ export default function FirstPage() {
         >
           <View
             style={{
-              paddingLeft: 20,
-              paddingRight: 20,
+              paddingLeft: 0,
+              paddingRight: 285,
             }}
           >
+                        <FontAwesomeIcon icon={faCreditCard} size={32} style={{ color: "#FFF"}} />
+
             <Text
               style={{
                 fontSize: 20,
@@ -248,6 +269,7 @@ export default function FirstPage() {
                 color: "#FFF",
               }}
             >
+
              Site web
             </Text>
           </View>
@@ -275,7 +297,77 @@ export default function FirstPage() {
         >
         </View>
       </View>
+      <View
+        style={{
+          backgroundColor: "#FFF",
+          marginHorizontal: 10,
+          paddingVertical: 10,
+          paddingLeft: 10,
+          marginTop: 20,
+          marginBottom: 20,
+        }}
+      >
+        <View
+          style={{
+            flexDirection: "row",
+            alignSelf: "flex-end",
+            alignItems: "center",
+            justifyContent: "space-between",
+          }}
+        >
+         
+        </View>
+        <Text
+          style={{
+            fontSize: 18,
+            color: "#6878D6",
+            fontWeight:'bold',
+            marginVertical: 0,
+            paddingHorizontal: 0,
+          }}
+        >
+          Souhaitez-vous démarrer un projet avec nous?
+</Text>
+<Text
+          style={{
+            fontSize: 16,
+            color: "#000",
+            marginVertical: 0,
+            paddingHorizontal: 0,
+          }}
+        >Nous sommes à votre écoute pour tout conseil et expertise pour vos projets informatiques</Text>
+<Text  style={{
+  
+          backgroundColor: "#FFF",
+          marginHorizontal: 55,
+          paddingVertical: 15,
+          paddingLeft: 150,
+          marginTop: 0,
+          marginBottom: 0,}}>
+                    <View style={styles.btnn}>
 
+            <TouchableOpacity activeOpacity={0.8}
+              onPress={onPress}>
+              <Text style={{ fontSize: 16,fontWeight: 'bold', color: COLORS.white }}>+212 703-648893</Text>
+            </TouchableOpacity>
+          </View>
+        </Text>
+        <View
+          style={{
+            alignItems: "center",
+            flexDirection: "row",
+            justifyContent: "center",
+            marginVertical: 5,
+          }}
+        >
+
+        </View>
+      </View>
+      <View>
+      <Text
+      style={{
+      marginLeft:30}}> Copyright © 2021 | Powered by Nadis Performance</Text></View>
       </ScrollView>
+      
   );
 }

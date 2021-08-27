@@ -16,10 +16,6 @@ const CustomSidebarMenu = (props) => {
       />
       <DrawerContentScrollView {...props}>
         <DrawerItemList {...props} />
-        <DrawerItem
-          label="Visitez-nous"
-          onPress={() => Linking.openURL('http://nadisperformance.com/')}
-        />
         <View style={styles.customItem}>
           <Image
             source={image}
