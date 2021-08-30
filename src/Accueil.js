@@ -1,23 +1,10 @@
 import React from 'react';
 import { ImageBackground, Linking, StyleSheet, Text, TouchableOpacity, View ,FlatList,ScrollView} from 'react-native';
 import image from '../assets/backg.jpg';
-import SimpleCard from './SimpleCard';
 import { makeStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
-import { borders } from '@material-ui/system';
-import { Colors } from 'react-native/Libraries/NewAppScreen';
 import COLORS from '../assets/COLORS/colors';
-import Icon from 'react-native-vector-icons/MaterialIcons';
-import backgcard from '../assets/cardbackg.png';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faCreditCard, faEdit , faObjectGroup } from '@fortawesome/free-solid-svg-icons';
-
-
 
 const styles = StyleSheet.create({
   container: {
@@ -91,6 +78,9 @@ export default function FirstPage() {
   const onPress = () => Linking.canOpenURL('http://nadisperformance.com/').then(() => {
     Linking.openURL('http://nadisperformance.com/');
 });
+  const onPresss = () => Linking.canOpenURL('+212 703-648893').then(() => {
+    Linking.openURL('+212 703-648893');
+  });
   return (
     <ScrollView >
         <ImageBackground source={image} style={styles.images}>
@@ -100,222 +90,174 @@ export default function FirstPage() {
             <Text style={{color:'#000', fontSize:14,fontWeight:'bold',marginLeft:20}}>informatisez vos projets avec <Text style={{color:'#8b0000', fontSize:12,fontWeight:'bold'}}>PERFORMANCE</Text></Text>
           </View>
           <View style={styles.btn}>
-          
           <TouchableOpacity activeOpacity={0.8}
           onPress={onPress}>
             <Text style={{fontWeight:'bold', color:COLORS.white}}>visitez-nous</Text>
             </TouchableOpacity>
           </View>
         </ImageBackground>
-        <View
-        style={{
-          backgroundColor: "#8B0000",
-          borderRadius: 40,
-          marginHorizontal: 10,
-          paddingVertical: 20,
-          marginTop: 20,
-        }}
-      >
-        <View
-          style={{
-            flexDirection: "row",
-            alignSelf: "flex-end",
-            alignItems: "center",
-            justifyContent: "space-between",
-          }}
-        >
-          <View
+ <View
             style={{
-              paddingLeft: 0,
-              paddingRight: 270,
-            }}
-          >
-                        <FontAwesomeIcon icon={faEdit} size={32} style={{ color: "#FFF"}}/>
-
+              backgroundColor: "#8B0000",
+              borderRadius: 20,
+              marginHorizontal: 20,
+              paddingVertical: 20,
+              marginTop: 20,
+            }} >
+            <View
+              style={{
+                flexDirection: "row",
+                alignSelf: "flex-end",
+                alignItems: "center",
+                justifyContent: "space-between",
+              }}>
+                <View
+                  style={{
+                    paddingLeft: 20,
+                    paddingRight: 20,
+                  }}>
+                  <FontAwesomeIcon icon={faEdit} size={25} style={{ color: "#FFF" }} />
+                  <Text
+                    style={{
+                      fontSize: 20,
+                      fontWeight: 'bold',
+                      color: "#FFF",
+                    }}>
+                ERP/CRM
+              </Text>
+              </View>
+            </View>
             <Text
               style={{
-                fontSize: 20,
-                fontWeight:'bold',
+                fontSize: 18,
                 color: "#FFF",
-              }}
-            >
-              <Text></Text>
-              
-                ERP/CRM
-            </Text>
-          </View>
-        </View>
-
-        <Text
-          style={{
-            fontSize: 17,
-            color: "#FFF",
-            marginVertical: 20,
-            paddingHorizontal: 30,
-          }}
-        >
-
-
-          Les ERP jouent un rôle important dans la vie de 
+                marginVertical: 30,
+                paddingHorizontal: 30,}}> Les ERP jouent un rôle important dans la vie de 
           vos entreprises. Pour vous aider à gérer vos projets,
            de définir et implémenter votre nouveau système de gestion
             de comptable, de mettre en place votre système de facturation 
             et documents ou encore de gérer vos stocks ou vos achats, 
             vous trouvez ainsi 
-          le module CRM pour booster vos relations clientèles.
-        </Text>
-        <View
-          style={{
-            alignItems: "center",
-            flexDirection: "row",
-            justifyContent: "center",
-            marginVertical: 5,
-          }}
-        >
-        </View>
-      </View>
-
-
-
-      <View
-        style={{
-          backgroundColor: "#8B0000",
-          borderRadius: 40,
-          marginHorizontal: 10,
-          paddingVertical: 20,
-          marginTop: 20,
-        }}
-      >
-        <View
-          style={{
-            flexDirection: "row",
-            alignSelf: "flex-end",
-            alignItems: "center",
-            justifyContent: "space-between",
-          }}
-        >
+          le module CRM pour booster vos relations clientèles.            </Text>
+            <View
+              style={{
+                alignItems: "center",
+                flexDirection: "row",
+                justifyContent: "center",
+                marginVertical: 5,}}>
+            </View>
+          </View>     
           <View
             style={{
-              paddingLeft: 0,
-              paddingRight: 133,
-            }}
-          >
-  <FontAwesomeIcon icon={faObjectGroup} size={32} style={{ color: "#FFF"}} />
-
+              backgroundColor: "#8B0000",
+              borderRadius: 20,
+              marginHorizontal: 20,
+              paddingVertical: 20,
+              marginTop: 20,}}>
+            <View
+              style={{
+                flexDirection: "row",
+                alignSelf: "flex-end",
+                alignItems: "center",
+                justifyContent: "space-between",}}>
+                <View
+                  style={{
+                    paddingLeft: 20,
+                    paddingRight: 20,}}>
+                    <FontAwesomeIcon icon={faObjectGroup} size={25} style={{ color: "#FFF"}} />
+                  <Text
+                    style={{
+                      fontSize: 20,
+                      fontWeight: 'bold',
+                      color: "#FFF",}}>
+              Application
+              </Text>
+               <Text
+                    style={{
+                      fontSize: 20,
+                      fontWeight: 'bold',
+                      color: "#FFF",}}>
+               web & mobile
+               </Text>
+              </View>
+            </View>
             <Text
               style={{
-                fontSize: 20,
+                fontSize: 18,
                 color: "#FFF",
-                fontWeight:'bold',
-                
-              }}
-            >
-              Application web & mobile
-            </Text>
+                marginVertical: 30,
+                paddingHorizontal: 30,}}>
+                Nadis Performance vous accompagne dans vos choix stratégiques.
+                Selon le contexte global de votre entreprise, nous vous conseillons afin de valoriser 
+                votre image et de créer un message clair adapté à votre cible.          </Text>
+            <View
+              style={{
+                alignItems: "center",
+                flexDirection: "row",
+                justifyContent: "center",
+                marginVertical: 5,}}>
+            </View>
           </View>
-        </View>
-        <Text
-          style={{
-            fontSize: 17,
-            color: "#FFF",
-            marginVertical: 20,
-            paddingHorizontal: 30,
-          }}
-        >
-          Nadis Performance vous accompagne dans vos choix stratégiques.
-           Selon le contexte global de votre entreprise, nous vous conseillons afin de valoriser 
-          votre image et de créer un message clair adapté à votre cible.
-        </Text>
-        <View
-          style={{
-            alignItems: "center",
-            flexDirection: "row",
-            justifyContent: "center",
-            marginVertical: 5,
-          }}
-        >
-         
-        </View>
-      </View>
-      <View
-        style={{
-          backgroundColor: "#8B0000",
-          borderRadius: 40,
-          marginHorizontal: 10,
-          paddingVertical: 20,
-          marginTop: 20,
-        }}
-      >
-        <View
-          style={{
-            flexDirection: "row",
-            alignSelf: "flex-end",
-            alignItems: "center",
-            justifyContent: "space-between",
-          }}
-        >
-          <View
+           <View
             style={{
-              paddingLeft: 0,
-              paddingRight: 285,
-            }}
-          >
-                        <FontAwesomeIcon icon={faCreditCard} size={32} style={{ color: "#FFF"}} />
-
-            <Text
+              backgroundColor: "#8B0000",
+              borderRadius: 20,
+              marginHorizontal: 20,
+              paddingVertical: 20,
+              marginTop: 20,}} >
+            <View
               style={{
-                fontSize: 20,
-                fontWeight:'bold',
-                color: "#FFF",
-              }}
-            >
-
+                flexDirection: "row",
+                alignSelf: "flex-end",
+                alignItems: "center",
+                justifyContent: "space-between",}}>
+                <View
+                  style={{
+                    paddingLeft: 20,
+                    paddingRight: 20,}}>
+                   <FontAwesomeIcon icon={faCreditCard} size={25} style={{ color: "#FFF"}} />
+                  <Text
+                    style={{
+                      fontSize: 20,
+                      fontWeight: 'bold',
+                      color: "#FFF",}}>
              Site web
-            </Text>
+              </Text>
+              </View>
+            </View>
+            <Text
+              style={{
+                fontSize: 18,
+                color: "#FFF",
+                marginVertical: 30,
+                paddingHorizontal: 30,}}>
+             Nous sommes très sensibles aux tendances du web et 
+             au respect des règles ergonomiques lors de la création
+             d’un web design. Nous développons des projets sur différents CMS 
+             personnalisés ou comme WordPress ou Prestashop ...         </Text>
+            <View
+              style={{
+                alignItems: "center",
+                flexDirection: "row",
+                justifyContent: "center",
+                marginVertical: 5,}}>
+            </View>
           </View>
-        </View>
-        <Text
-          style={{
-            fontSize: 17,
-            color: "#FFF",
-            marginVertical: 20,
-            paddingHorizontal: 30,
-          }}
-        >
-          Nous sommes très sensibles aux tendances du web et 
-          au respect des règles ergonomiques lors de la création
-           d’un web design. Nous développons des projets sur différents CMS 
-          personnalisés ou comme WordPress ou Prestashop ...
-        </Text>
-        <View
-          style={{
-            alignItems: "center",
-            flexDirection: "row",
-            justifyContent: "center",
-            marginVertical: 5,
-          }}
-        >
-        </View>
-      </View>
-      <View
+          <View
         style={{
           backgroundColor: "#FFF",
           marginHorizontal: 10,
           paddingVertical: 10,
           paddingLeft: 10,
           marginTop: 20,
-          marginBottom: 20,
-        }}
-      >
+          marginBottom: 20,}}>
         <View
           style={{
             flexDirection: "row",
             alignSelf: "flex-end",
             alignItems: "center",
             justifyContent: "space-between",
-          }}
-        >
-         
+          }}>
         </View>
         <Text
           style={{
@@ -323,31 +265,25 @@ export default function FirstPage() {
             color: "#6878D6",
             fontWeight:'bold',
             marginVertical: 0,
-            paddingHorizontal: 0,
-          }}
-        >
-          Souhaitez-vous démarrer un projet avec nous?
-</Text>
-<Text
+            paddingHorizontal: 0,}}>
+          Souhaitez-vous démarrer un projet avec nous?</Text>
+          <Text
           style={{
             fontSize: 16,
             color: "#000",
             marginVertical: 0,
-            paddingHorizontal: 0,
-          }}
-        >Nous sommes à votre écoute pour tout conseil et expertise pour vos projets informatiques</Text>
-<Text  style={{
-  
+            paddingHorizontal: 0,}}>
+            Nous sommes à votre écoute pour tout conseil et expertise pour vos projets informatiques</Text>
+            <Text  style={{
           backgroundColor: "#FFF",
           marginHorizontal: 55,
           paddingVertical: 15,
           paddingLeft: 150,
           marginTop: 0,
           marginBottom: 0,}}>
-                    <View style={styles.btnn}>
-
+          <View style={styles.btnn}>
             <TouchableOpacity activeOpacity={0.8}
-              onPress={onPress}>
+              onPress={onPresss}>
               <Text style={{ fontSize: 16,fontWeight: 'bold', color: COLORS.white }}>+212 703-648893</Text>
             </TouchableOpacity>
           </View>
@@ -357,9 +293,7 @@ export default function FirstPage() {
             alignItems: "center",
             flexDirection: "row",
             justifyContent: "center",
-            marginVertical: 5,
-          }}
-        >
+            marginVertical: 5,}}>
 
         </View>
       </View>

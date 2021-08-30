@@ -203,7 +203,7 @@ Intégration des ERP                </Text>
           <View
             style={{
               backgroundColor: "#d2d9d0",
-              borderRadius: 0,
+              borderRadius: 20,
               marginHorizontal: 20,
               paddingVertical: 20,
               marginTop: 20,

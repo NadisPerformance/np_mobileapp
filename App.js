@@ -68,18 +68,18 @@ function secondScreenStack({ navigation }) {
           <NavigationDrawerStructure navigationProps={navigation} />
         ),
         headerStyle: {
-          backgroundColor: '#8b0000', //Set Header color
+          backgroundColor: '#8b0000', 
         },
-        headerTintColor: '#fff', //Set Header text color
+        headerTintColor: '#fff', 
         headerTitleStyle: {
-          fontWeight: 'bold', //Set Header text style
+          fontWeight: 'bold', 
         },
       }}>
       <Stack.Screen
         name="A propos"
         component={APropos}
         options={{
-          title: 'A propos', //Set Header Title
+          title: 'A propos', 
         }}
       />
     </Stack.Navigator>
@@ -92,16 +92,16 @@ function thirdScreenStack({ navigation }) {
         name="Services"
         component={Services}
         options={{
-          title: 'Services', //Set Header Title
+          title: 'Services', 
           headerLeft: () => (
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
           headerStyle: {
-            backgroundColor: '#8b0000', //Set Header color
+            backgroundColor: '#8b0000', 
           },
-          headerTintColor: '#fff', //Set Header text color
+          headerTintColor: '#fff', 
           headerTitleStyle: {
-            fontWeight: 'bold', //Set Header text style
+            fontWeight: 'bold', 
           },
         }}
       />
@@ -115,16 +115,16 @@ function ContactScreenStack({ navigation }) {
         name="Contact"
         component={Contact}
         options={{
-          title: 'Contact', //Set Header Title
+          title: 'Contact', 
           headerLeft: () => (
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
           headerStyle: {
-            backgroundColor: '#8b0000', //Set Header color
+            backgroundColor: '#8b0000', 
           },
-          headerTintColor: '#fff', //Set Header text color
+          headerTintColor: '#fff', 
           headerTitleStyle: {
-            fontWeight: 'bold', //Set Header text style
+            fontWeight: 'bold', 
           },
         }}
       />
@@ -139,16 +139,16 @@ function RejoindreScreenStack({ navigation }) {
         name="Rejoindre"
         component={Rejoindre}
         options={{
-          title: 'Nous Rejoindre', //Set Header Title
+          title: 'Nous Rejoindre', 
           headerLeft: () => (
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
           headerStyle: {
-            backgroundColor: '#8b0000', //Set Header color
+            backgroundColor: '#8b0000', 
           },
-          headerTintColor: '#fff', //Set Header text color
+          headerTintColor: '#fff', 
           headerTitleStyle: {
-            fontWeight: 'bold', //Set Header text style
+            fontWeight: 'bold', 
           },
         }}
       />
@@ -162,16 +162,16 @@ function DemandeFunc({ navigation }) {
         name="Demande"
         component={Demande}
         options={{
-          title: 'DEMANDE DE DEVIS', //Set Header Title
+          title: 'DEMANDE DE DEVIS', 
           headerLeft: () => (
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
           headerStyle: {
-            backgroundColor: '#8b0000', //Set Header color
+            backgroundColor: '#8b0000', 
           },
-          headerTintColor: '#fff', //Set Header text color
+          headerTintColor: '#fff', 
           headerTitleStyle: {
-            fontWeight: 'bold', //Set Header text style
+            fontWeight: 'bold', 
           },
         }}
       />
